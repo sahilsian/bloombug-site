@@ -1,0 +1,390 @@
+@tailwind base;
+
+/* Write your own custom base styles here */
+
+/* Start purging... */
+@tailwind components;
+/* Stop purging. */
+
+/* Write you own custom component styles here */
+
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+/* Your own custom utilities */
+
+@layer components { 
+  .btn {
+    @apply hover:opacity-80 rounded-[100px] text-center max-w-[400px] font-medium transition-all inline-block p-3 px-10 cursor-pointer text-black shadow-lg
+  }
+
+  .gradient {
+    background: linear-gradient(239deg, rgba(199, 44, 145, 0.00) 0.62%, rgba(199, 44, 145, 0.26) 0.63%, rgba(65, 40, 66, 0.77) 79.79%);
+  }
+
+  .btn-submit {
+    @apply bg-[#FFFFFF] text-[#C64B9B] font-bold text-lg rounded-lg border-2 hover:opacity-80 transition-all inline-block p-3 px-10 cursor-pointer mt-4
+  }
+  .label {
+    @apply mb-2 block text-sm font-[300]
+  }
+}
+
+.has-text-align-left {
+  @apply text-left;
+}
+
+
+
+.has-text-align-center {
+  @apply text-center;
+}
+
+.has-text-align-right {
+  @apply text-right;
+}
+
+.has-large-font-size {
+  @apply text-4xl;
+}
+
+.mainLeadForm {
+  background-color: #3050e1;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.alignfull {
+  @apply w-screen relative;
+
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;  
+  max-width: 100vw;
+  right: 50%;
+}
+
+.mobileForm {
+  display: none;
+}
+
+.iconContainer{ 
+  display: none;
+}
+
+.mobile {
+  display: none;
+}
+
+@media screen and (max-width: 953px) {
+
+  .reverse {
+    flex-wrap: wrap-reverse;
+  }
+
+  .mainHeading * {
+    text-align: center;
+  }
+
+  .mobile-text-center  {
+    text-align: center;
+  }
+
+  .footerImage {
+    margin: 50px auto;
+  }
+
+  .footerNav {
+    justify-content: center;
+  }
+
+  .copyright {
+    text-align: center;
+  }
+
+  .web {
+    display: none;
+  }
+
+  .text-center-mobile {
+    text-align: center !important;
+  }
+
+  
+  .mobile {
+    display: flex;
+  }
+
+  .navContainer {
+  }
+
+  .iconContainer{ 
+    display: flex;
+  }
+
+  .navbar .items a {
+    padding: 10px;
+  }
+
+  .navbar .subItems {
+    position: static;
+    visibility: visible;
+    height: fit-content;
+    top: 0;
+    min-width: none;
+    opacity: 1;
+    background-color: unset;
+    color: #ffffff;
+    vertical-align: middle;
+    padding: 0px;
+  }
+
+  .navbar .subItems a {
+    padding: 10px;
+    padding-left: 16px;
+  }
+
+  .navbar .subItems:hover {
+    opacity: 0.8;
+  }
+
+  .navbar .subItems .menuLabel {
+    display: none;
+  }
+
+  .navbar {
+    padding-top: 30px;
+  }
+
+  .navbar > div {
+    display: block;
+  }
+
+  .navbar .buttonContainer {
+    width: 100%;
+    padding-top: 20px;
+  }
+
+  .navbar .buttonContainer .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+
+  div.navbar > div > div.itemsContainer {
+    display: block;
+  
+  }
+
+  div.navbar > div > div.itemsContainer .items a{
+    border-bottom: 1px solid #ffffff20;
+  }
+
+  .column {
+    min-width: 300px !important;
+    padding: 20px;
+  }
+
+  .mainLeadForm {
+    display: none;
+  }
+
+  .mobileForm {
+    display: block;
+  }
+}
+
+
+.wp-block-image img {
+  @apply max-w-full mt-2;
+}
+.wp-block-image.aligncenter {
+  @apply text-center;
+}
+.wp-block-image.alignfull img,
+.wp-block-image.alignwide img {
+  @apply w-full;
+}
+.wp-block-image .alignleft,
+.wp-block-image .alignright,
+.wp-block-image .aligncenter,
+.wp-block-image.is-resized {
+  @apply table ml-0 mr-0;
+}
+.wp-block-image .alignleft > figcaption,
+.wp-block-image .alignright > figcaption,
+.wp-block-image .aligncenter > figcaption,
+.wp-block-image.is-resized > figcaption {
+  @apply table-caption;
+
+  caption-side: bottom;
+}
+
+
+.wp-block-image .alignleft {
+  @apply float-left mr-4;
+}
+.wp-block-image .alignright {
+  @apply float-right ml-4;
+}
+.wp-block-image .aligncenter {
+  @apply m-auto;
+}
+
+.wp-block-button a,
+.wp-block-file a.wp-block-file__button {
+  @apply bg-blue-500 text-white no-underline py-2 px-4;
+}
+
+.wp-block-button a:hover,
+.wp-block-file a.wp-block-file__button:hover {
+  @apply bg-blue-400 cursor-pointer;
+}
+
+.wp-block-file a:first-of-type {
+  @apply mr-4;
+}
+
+.wp-block-cover {
+  @apply flex flex-wrap justify-center items-center bg-cover bg-center overflow-hidden;
+
+  min-height: 430px;
+}
+
+.wp-block-verse {
+  @apply font-sans;
+}
+
+.wp-block-media-text {
+  @apply grid grid-cols-2 gap-4;
+}
+
+
+.accentButton button {
+  background-color: #4aaf6d;
+}
+
+[class^="number-slide"],
+[class*=" number-slide"] {
+  background: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: #fff;
+  font-weight: 500;
+  height: 300px;
+  max-height: 100vh;
+}
+
+.number-slide1 {
+  background: rgb(64, 175, 255);
+  background: linear-gradient(
+    128deg,
+    rgba(64, 175, 255, 1) 0%,
+    rgba(63, 97, 255, 1) 100%
+  );
+}
+
+.number-slide2 {
+  background: rgb(255, 75, 64);
+  background: linear-gradient(
+    128deg,
+    rgba(255, 154, 63, 1) 0%,
+    rgba(255, 75, 64, 1) 100%
+  );
+}
+
+.number-slide3 {
+  background: rgb(182, 255, 64);
+  background: linear-gradient(
+    128deg,
+    rgba(182, 255, 64, 1) 0%,
+    rgba(63, 255, 71, 1) 100%
+  );
+  background: linear-gradient(
+    128deg,
+    rgba(189, 255, 83, 1) 0%,
+    rgba(43, 250, 82, 1) 100%
+  );
+}
+
+.number-slide4 {
+  background: rgb(64, 255, 242);
+  background: linear-gradient(
+    128deg,
+    rgba(64, 255, 242, 1) 0%,
+    rgba(63, 188, 255, 1) 100%
+  );
+}
+
+.number-slide5 {
+  background: rgb(255, 64, 156);
+  background: linear-gradient(
+    128deg,
+    rgba(255, 64, 156, 1) 0%,
+    rgba(255, 63, 63, 1) 100%
+  );
+}
+.number-slide6 {
+  background: rgb(64, 76, 255);
+  background: linear-gradient(
+    128deg,
+    rgba(64, 76, 255, 1) 0%,
+    rgba(174, 63, 255, 1) 100%
+  );
+}
+
+.navigation-wrapper {
+  position: relative;
+}
+
+.dots {
+  display: flex;
+  padding: 10px 0;
+  justify-content: center;
+}
+
+.dot {
+  border: none;
+  width: 10px;
+  height: 10px;
+  background: #c64b9b78;
+  border-radius: 50%;
+  margin: 0 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.dot:focus {
+  outline: none;
+}
+
+.dot.active {
+  background: #c64b9b;
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  fill: #c64b9b;
+  cursor: pointer;
+}
+
+.arrow--left {
+  left: 5px;
+}
+
+.arrow--right {
+  left: auto;
+  right: 5px;
+}
+
+.arrow--disabled {
+  fill: #c64b9b82;
+}
