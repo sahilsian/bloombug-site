@@ -5,7 +5,7 @@ import { useParallax } from "react-scroll-parallax";
 export const Cover = ({children, background, className}) => {
     const router = useRouter()
     const parallax = useParallax({
-        speed: -15,
+        speed: -12,
       });
     return (
         <div className={`${className} bg-[#C72C91] min-h-screen text-white relative flex justify-center`}>

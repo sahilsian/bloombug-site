@@ -177,6 +177,10 @@
   
   }
 
+  .mobile-flex-reverse {
+    flex-direction: column-reverse;
+  }
+
   div.navbar > div > div.itemsContainer .items a{
     border-bottom: 1px solid #ffffff20;
   }

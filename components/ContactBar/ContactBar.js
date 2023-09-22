@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export const ContactBar = ({phoneNumber, email}) => {
     return (
-        <div className="w-full flex gap-5">
+        <div className="w-full flex gap-5 justify-center lg:justify-start">
             <a href={`tel:${phoneNumber}`} className="flex gap-3 items-center">
                 <FontAwesomeIcon icon={faPhone} size="16px"></FontAwesomeIcon>
                 <p className="text-sm">{phoneNumber}</p>
