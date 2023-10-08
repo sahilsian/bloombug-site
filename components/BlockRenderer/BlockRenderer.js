@@ -22,6 +22,8 @@ import { StoreButtons } from '../StoreButtons'
 import { Price } from '../Price'
 import { CheckedList } from '../CheckedList'
 import { ContactBar } from '../ContactBar'
+import { List } from '../List'
+import { ListItem } from '../List/ListItem'
 import Image from 'next/image'
 import { Footer } from '../Footer'
 
@@ -36,6 +38,11 @@ export const BlockRenderer = ({ items, blocks }) => {
             }
             case "acf/checkedlist": {
                 return <CheckedList items={block.attributes?.data}></CheckedList>
+            }
+            case "core/list": {
+                return <List key={block.id}>
+                    <BlockRenderer blocks={block.innerBlocks}></BlockRenderer>
+                </List>
             }
             case "acf/price": {
                 return <Price price={block.attributes.data.price} ></Price>
@@ -94,6 +101,9 @@ export const BlockRenderer = ({ items, blocks }) => {
                 <Query key={block.id}>
                     <BlockRenderer blocks={block.innerBlocks}></BlockRenderer>
                 </Query>
+            }
+            case "core/list-item": {
+                return <ListItem key={block.id} content={block.originalContent}></ListItem>
             }
             case "core/gallery": {
                 return <Gallery key={block.id} columns={block.attributes.columns || 3} cropImages={block.attributes.imageCrop} items={block.innerBlocks}></Gallery>
