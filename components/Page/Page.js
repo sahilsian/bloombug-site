@@ -22,7 +22,7 @@ export const Page = (props) => {
                 <meta property="og:image" content={props.seo.opengraphImage.uri || ""}></meta>
 
                 <meta name="twitter:card" content="summary_large_image"></meta>
-                <meta property="twitter:domain" content="greenclick.app"></meta>
+                <meta property="twitter:domain" content="bloombug.ca"></meta>
                 <meta property="twitter:url" content={`${router.asPath}`}></meta>
                 <meta name="twitter:title" content={props.seo.metaDesc}></meta>
                 <meta name="twitter:description" content={props.seo.metaDesc}></meta>
