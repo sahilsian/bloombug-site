@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Cover } from '../Cover'
 import { Heading } from '../Heading'
 import { Paragraph } from '../Paragraph'
@@ -26,8 +27,12 @@ import { List } from '../List'
 import { ListItem } from '../List/ListItem'
 import Image from 'next/image'
 import { Footer } from '../Footer'
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 export const BlockRenderer = ({ items, blocks }) => {
+    const [open, setOpen] = useState(false);
+
     return blocks.map(block => {
         switch (block.name) {
             case "gravityforms/form": {
@@ -166,14 +171,23 @@ export const BlockRenderer = ({ items, blocks }) => {
             }
             case "core/image": {
                 return (
-                    <div className={`flex align-center justify-center rounded-lg overflow-hidden`}>
+                    <div className={`flex align-center cursor-pointer justify-center rounded-lg overflow-hidden`}>
                         <Image
+                            onClick={() => setOpen(true)}
                             key={block.id}
                             src={block.attributes.url}
                             height={block.attributes.height}
                             width={block.attributes.width}
                             alt={block.attributes.alt || ""}
                         />
+                        <Lightbox
+                            open={open}
+                            close={() => setOpen(false)}
+                            slides={[
+                                { src: block.attributes.url },
+                              ]}
+                            
+                        ></Lightbox>
                     </div>
 
                 )

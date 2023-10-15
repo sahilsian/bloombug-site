@@ -69,7 +69,7 @@ export const Reviews = ({ place_id }) => {
                 <div ref={sliderRef} className="keen-slider overflow-auto max-h-max">
                     {reviews.map((item) => {
                         return <div className={`keen-slider__slide h-full w-full`}>
-                            <div className=" border-[#FCAF17] !min-h-0 flex items-center flex-col justify-center border-4 p-10 mx-1 lg:mx-20 rounded-[30px] box-border"> 
+                            <div className=" bg-white !min-h-0 flex items-center flex-col justify-center p-10 mx-1 lg:mx-20 rounded-[8px] mb-5 "> 
                                 <Image className=" mb-4" src={item.profile_photo_url} width={100} height={100}></Image>
                                 <h3 className="text-[1.4rem] font-[600] mb-2">{item.author_name}</h3>
                                 <div className="flex gap-1 text-[#FCAF17] mb-3">

@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFacebook, faInstagram, faTiktok, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons"
 import Image from "next/image"
 import Link from "next/link"
+import { ContactBar } from "../ContactBar"
 
 
 export const Footer = ({ items, data }) => {
@@ -12,7 +13,8 @@ export const Footer = ({ items, data }) => {
                     <div className="mb-8 max-w-[800px]">
                         <Image className="mb-20 footerImage" src={"/logo.png"} width={250} height={0}></Image>
                         <h2 className="text-white text-2xl mb-5 font-bold">{data.site_title}</h2>
-                        <p className="text-white">{data.site_description}</p>
+                        <p className="text-white mb-10">{data.site_description}</p>
+                        <ContactBar ></ContactBar>
                     </div>
                     <div className="flex gap-4 mb-7">
                         {

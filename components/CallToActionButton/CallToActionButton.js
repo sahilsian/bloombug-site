@@ -8,15 +8,16 @@ export const CallToActionButton = ({ align = "left", buttonLabel, target, destin
         color: "#FFFFFF"
     }
     const backgroundMap = {
-        Primary: {
-            bgColor: "#FFFFFF",
-            fontColor: "#C64B9B"
+        primary: {
+            bgColor: "#f9ac13",
+            fontColor: "#FFFFFF"
         },
         Secondary: {
-            bgColor: "#C64B9B",
+            bgColor: "#bf4c93",
             fontColor: "#FFFFFF"
         }
     }
+    console.log(type)
     return (
         <div className={alignMap[align]}>
             <ButtonLink fontColor={backgroundMap[type]?.fontColor || "#000000"} destination={destination} target={target} color={backgroundMap[type]?.bgColor || "#FFFFFF"} label={buttonLabel}></ButtonLink>

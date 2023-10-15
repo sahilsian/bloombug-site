@@ -20,7 +20,7 @@
   }
 
   .gradient {
-    background: linear-gradient(239deg, rgba(199, 44, 145, 0.00) 0.62%, rgba(199, 44, 145, 0.26) 0.63%, rgba(65, 40, 66, 0.77) 79.79%);
+    background: linear-gradient(239deg, rgba(199, 44, 145, 0.00) 0.62%, rgba(77, 13, 54, 0.50) 0.63%, rgba(37, 17, 37, 0.77) 79.79%);
   }
 
   .btn-submit {
@@ -77,6 +77,11 @@
   display: none;
 }
 
+
+.no-wrap {
+  flex-wrap: nowrap !important;
+}
+
 @media screen and (max-width: 953px) {
 
   .reverse {
@@ -106,6 +111,12 @@
   .web {
     display: none;
   }
+
+
+  .no-wrap {
+    flex-wrap: wrap !important;
+  }
+
 
   .text-center-mobile {
     text-align: center !important;
