@@ -25,8 +25,10 @@ import { CheckedList } from '../CheckedList'
 import { ContactBar } from '../ContactBar'
 import { List } from '../List'
 import { ListItem } from '../List/ListItem'
-import Image from 'next/image'
 import { Footer } from '../Footer'
+import { Calendly } from '../Calendly'
+import { AppointmentOpenButton } from '../AppointmentOpenButton'
+import Image from 'next/image'
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
@@ -48,6 +50,16 @@ export const BlockRenderer = ({ items, blocks }) => {
                 return <List key={block.id}>
                     <BlockRenderer blocks={block.innerBlocks}></BlockRenderer>
                 </List>
+            }
+            case "acf/appointmentopenbutton": {
+                console.log(block)
+                return <AppointmentOpenButton
+                key={block.id}
+                buttonLabel={block.attributes.data.label}
+                align={block.attributes.data.align}
+                type={block.attributes.data.type}
+                calendlyURL={block.attributes.data.calendly_link}
+            ></AppointmentOpenButton>
             }
             case "acf/price": {
                 return <Price price={block.attributes.data.price} ></Price>
@@ -101,6 +113,11 @@ export const BlockRenderer = ({ items, blocks }) => {
             }
             case "acf/hotelproperties": {
                 return <PostFeatures key={block.id} price={block.attributes.price} vehicles={block.attributes.vehicles} nearAirport={block.attributes.near_airport} microMobilityAvailable={block.attributes.micro_mobility_available}></PostFeatures>
+            }
+            case "acf/calendly": {
+                console.log(block)
+                return <Calendly calendlyURL={block.attributes.data.calendlyURL}>
+                </Calendly>
             }
             case "core/query": {
                 <Query key={block.id}>

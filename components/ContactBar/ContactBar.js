@@ -2,7 +2,7 @@ import { faEnvelope, faMapPin, faPhone } from "@fortawesome/free-solid-svg-icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "next/link"
 
-export const ContactBar = ({phoneNumber = "(604) 722-4371", email = "hello@bloombug.ca", address = "12689 72 Ave, Surrey, BC V3W 2M7"}) => {
+export const ContactBar = ({phoneNumber = "(604) 722-4371", email = "hello@bloombug.ca", address = "Surrey, British Columbia"}) => {
     return (
         <div className="text-white">
             <div className="w-full  flex gap-5 justify-center mb-6 lg:justify-start">
