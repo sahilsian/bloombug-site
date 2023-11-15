@@ -62,11 +62,11 @@ export const Reviews = ({ place_id }) => {
 
     return (
         reviews.length > 0 && <div className="">
-            <div className="navigation-wrapper">
+            <div className="navigation-wrapper pl-2 pr-2">
                 {error && (
                     <div>An error has occured, please try again later</div>
                 )}
-                <div ref={sliderRef} className="keen-slider overflow-auto max-h-max">
+                <div ref={sliderRef} className="keen-slider  overflow-auto max-h-max">
                     {reviews.map((item) => {
                         return <div className={`keen-slider__slide h-full w-full`}>
                             <div className=" bg-white !min-h-0 flex items-center flex-col justify-center p-10 mx-1 lg:mx-20 rounded-[8px] mb-5 "> 

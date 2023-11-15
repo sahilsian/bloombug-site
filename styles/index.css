@@ -14,6 +14,10 @@
 
 /* Your own custom utilities */
 
+html, body {
+  box-sizing: border-box;
+}
+
 @layer components { 
   .btn {
     @apply hover:opacity-80 rounded-[100px] text-center max-w-[400px] font-medium transition-all inline-block p-3 px-10 cursor-pointer text-black shadow-lg
@@ -122,6 +126,17 @@
     text-align: center !important;
   }
 
+  .columns {
+    box-sizing: border-box;
+  }
+
+  .column {
+    align-items: center;
+  }
+
+  .normalGroup {
+    padding: 10px !important;
+  }
   
   .mobile {
     display: flex;
