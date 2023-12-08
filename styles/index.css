@@ -39,6 +39,9 @@ html, body {
   @apply text-left;
 }
 
+.clippedImage {
+  max-height: 500px;
+}
 
 
 .has-text-align-center {

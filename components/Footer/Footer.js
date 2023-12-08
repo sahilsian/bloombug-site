@@ -58,6 +58,11 @@ export const Footer = ({ items, data }) => {
                                     Privacy Policy
                                 </Link>
                             </div>
+                            <div className=" flex-1 flex flex-col">
+                                <Link href={"faq"} className={`transition-all block hover:text-opacity-80 text-white pb-2`}>
+                                    Terms and Conditions
+                                </Link>
+                            </div>
 
                         </div>
                     </div>

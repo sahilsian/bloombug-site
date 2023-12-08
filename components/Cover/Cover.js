@@ -14,7 +14,7 @@ export const Cover = ({children, background, className}) => {
             </div>
             <div className={`w-full  max-h-screen  h-full absolute`}>
                 <div className="gradient w-full h-full absolute z-10"></div>
-                <Image alt="Cover" src={background} fill className=' object-cover w-full h-screen' />
+                <Image alt="Cover" src={background} fill className=' object-cover w-full h-screen ' />
             </div>
 
         </div>

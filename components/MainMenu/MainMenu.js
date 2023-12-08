@@ -51,7 +51,7 @@ export const MainMenu = ({ items, callToActionLabel, callToActionDestination }) 
                             return (
                             <div key={item.id} className="cursor-pointer items relative group">
                                 <div>
-                                    <Link onClick={()=> setActiveMenu(false)} href={item.destination} className={`p-5 transition-all flex items-center hover:text-opacity-80`}>
+                                    <Link onClick={()=> window.screen.width < 953 && setActiveMenu(false)} href={item.destination} className={`p-5 transition-all flex items-center hover:text-opacity-80`}>
                                         {item.label}
                                         {!!item.subMenuItem?.length && (
                                             <FontAwesomeIcon width={24} height={24} className="pl-3" size="xs" icon={faChevronDown}></FontAwesomeIcon>
@@ -63,7 +63,7 @@ export const MainMenu = ({ items, callToActionLabel, callToActionDestination }) 
                                     <div className={`block subItems  shadow-md border-[#00000010] border-[1px] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all text-black ${activeMenu ? "" : "group-hover:h-[150px]"} min-w-[250px] bg-white absolute rounded-md p-5 left-0 top-10 group-hover:top-[60px]`}>
                                         <div className={`font-semibold menuLabel pb-3`}>{item.label}</div>
                                         {item.subMenuItem.map(subMenuItems => (
-                                            <Link onClick={()=> setActiveMenu(false)} key={subMenuItems.id} href={subMenuItems.destination} className="flex whitespace-nowrap pb-3 text-opacity-70 transition-all  hover:text-[#fad] hover:text-opacity-50 items-center gap-3">
+                                            <Link onClick={()=> window.screen.width < 953 && setActiveMenu(false)} key={subMenuItems.id} href={subMenuItems.destination} className="flex whitespace-nowrap pb-3 text-opacity-70 transition-all  hover:text-[#fad] hover:text-opacity-50 items-center gap-3">
                                                 <FontAwesomeIcon width={24} height={24} className="" size="xs"></FontAwesomeIcon>
                                                 {subMenuItems.label}
                                             </Link>

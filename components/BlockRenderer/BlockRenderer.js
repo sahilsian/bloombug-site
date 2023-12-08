@@ -187,6 +187,7 @@ export const BlockRenderer = ({ items, blocks }) => {
                 </BlockRenderer>
             }
             case "core/image": {
+                console.log(block)
                 return (
                     <div className={`flex align-center cursor-pointer justify-center rounded-lg overflow-hidden`}>
                         <Image
@@ -196,6 +197,7 @@ export const BlockRenderer = ({ items, blocks }) => {
                             height={block.attributes.height}
                             width={block.attributes.width}
                             alt={block.attributes.alt || ""}
+                            className={block.attributes.className || ""}
                         />
                         <Lightbox
                             open={open}
