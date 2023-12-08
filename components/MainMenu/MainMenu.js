@@ -76,7 +76,7 @@ export const MainMenu = ({ items, callToActionLabel, callToActionDestination }) 
                 { activeMenu && (
                     <div className="flex flex-1 justify-end">
                         <div className="ml-3 my-auto buttonContainer">
-                            <ButtonLink onClick={()=> setActiveMenu(false)} fontColor="#000000" destination={callToActionDestination} label={callToActionLabel}></ButtonLink>
+                            <ButtonLink onClick={()=> window.screen.width < 953 && setActiveMenu(false)} fontColor="#000000" destination={callToActionDestination} label={callToActionLabel}></ButtonLink>
                         </div>
                     </div>
                 )
