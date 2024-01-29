@@ -28,7 +28,7 @@ export const Page = (props) => {
                 <meta name="twitter:description" content={props.seo.metaDesc}></meta>
                 <meta name="twitter:image" content={props.seo.opengraphImage.uri || ""}></meta>
             </Head>
-            <MainMenu items={props.mainMenuItems} callToActionLabel={props.callToActionLabel} callToActionDestination={props.callToActionDestination}></MainMenu>
+            <MainMenu items={props.mainMenuItems} callToActionLabel={props.callToActionLabel} social={props.social} callToActionDestination={props.callToActionDestination}></MainMenu>
             <Analytics></Analytics>
             <ParallaxProvider>
             <BlockRenderer items={props.mainMenuItems} blocks={props.blocks}></BlockRenderer>

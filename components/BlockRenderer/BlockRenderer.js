@@ -27,6 +27,8 @@ import { List } from '../List'
 import { ListItem } from '../List/ListItem'
 import { Footer } from '../Footer'
 import { Calendly } from '../Calendly'
+import { IDButton } from '../IDButton'
+import { IdDiv } from '../IdDiv'
 import { AppointmentOpenButton } from '../AppointmentOpenButton'
 import Image from 'next/image'
 import Lightbox from "yet-another-react-lightbox";
@@ -60,6 +62,16 @@ export const BlockRenderer = ({ items, blocks }) => {
                 type={block.attributes.data.type}
                 calendlyURL={block.attributes.data.calendly_link}
             ></AppointmentOpenButton>
+            }
+            case "acf/iddiv" : {
+                return <IdDiv id={block.attributes.data.id}></IdDiv>
+            }
+            case "acf/idbutton" : {
+                return <IDButton key={block.id}
+                buttonLabel={block.attributes.data.label}
+                destination={block.attributes.data.id || ""}
+                align={block.attributes.data.align}
+                type={block.attributes.data.type} ></IDButton>
             }
             case "acf/price": {
                 return <Price price={block.attributes.data.price} ></Price>
@@ -199,14 +211,14 @@ export const BlockRenderer = ({ items, blocks }) => {
                             alt={block.attributes.alt || ""}
                             className={block.attributes.className || ""}
                         />
-                        <Lightbox
+                        {/* <Lightbox
                             open={open}
                             close={() => setOpen(false)}
                             slides={[
                                 { src: block.attributes.url },
                               ]}
                             
-                        ></Lightbox>
+                        ></Lightbox> */}
                     </div>
 
                 )

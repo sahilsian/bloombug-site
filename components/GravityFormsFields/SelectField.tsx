@@ -32,14 +32,14 @@ export default function SelectField({ field, fieldErrors }: Props) {
 
   return (
     <div className={`select gfield gfield-${type} ${cssClass}`.trim()}>
-      <label className="text-left text-sm" htmlFor={htmlId}>{label}</label>
+      <label className="text-left text-white label text-sm" htmlFor={htmlId}>{`${label} ${isRequired ? " *" : " (Optional)"}`}</label>
       <select
         name={String(id)}
         id={htmlId}
         required={Boolean(isRequired)}
         value={value}
         defaultValue={'none'}
-        className="w-full text-sm bg-transparent py-3 border-[#ffffff] border-b-2"
+        className="w-full text-sm bg-white rounded-lg px-5 py-3 border-b-2"
         onChange={event => {
           dispatch({
             type: ACTION_TYPES.updateSelectFieldValue,

@@ -5,8 +5,6 @@ import "yet-another-react-lightbox/styles.css";
 
 export const Gallery = ({ columns, cropImages, items }) => {
 
-    const [open, setOpen] = useState(false);
-
     let maxHeight = 0;
     let maxWidth = 0;
     
@@ -20,6 +18,9 @@ export const Gallery = ({ columns, cropImages, items }) => {
             }
         })
     }
+
+    const [open, setOpen] = useState(false);
+
     
     const columnWidth = 100 / columns;
 
@@ -37,14 +38,14 @@ export const Gallery = ({ columns, cropImages, items }) => {
                     onClick={() => setOpen(true)}
                     >
                     </Image>
-                    <Lightbox
+                    {/* <Lightbox
                         open={open}
                         close={() => setOpen(false)}
                         slides={[
                             { src: item.attributes.url },
                           ]}
                     >
-                    </Lightbox>
+                    </Lightbox> */}
                 </div>
                 )
             })}

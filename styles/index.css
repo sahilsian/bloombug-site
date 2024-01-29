@@ -95,6 +95,9 @@ html, body {
     flex-wrap: wrap-reverse;
   }
 
+  #Nav {
+  }
+
   .mainHeading * {
     text-align: center;
   }

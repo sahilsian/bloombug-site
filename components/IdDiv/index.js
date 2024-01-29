@@ -1,0 +1,1 @@
+export { IdDiv } from './IdDiv'
