@@ -211,7 +211,7 @@ export const BlockRenderer = ({ items, blocks }) => {
                             alt={block.attributes.alt || ""}
                             className={block.attributes.className || ""}
                         />
-                        {/* <Lightbox
+                        {/*test <Lightbox
                             open={open}
                             close={() => setOpen(false)}
                             slides={[
