@@ -8,7 +8,7 @@ export const Cover = ({children, background, className}) => {
         speed: -12,
       });
     return (
-        <div className={`${className} bg-[#C72C91] min-h-screen text-white relative flex justify-center`}>
+        <div className={`${className} bg-[#412842] min-h-screen text-white relative flex justify-center`}>
             <div ref={parallax.ref} className={`w-full flex  pt-[200px] flex-col min-h-screen z-20`}>
             {children}
             </div>
