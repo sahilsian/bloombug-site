@@ -30,16 +30,19 @@ interface Props {
 export default function GravityFormsForm({ form, id }: Props) {
   const { state } = useGravityForm();
   const [newData, setData] = useState(null)
-  
+
   const sendForm = async () => {
+    
     const response = await fetch(`/api/submit-form`, {
       method: "POST",
       body: JSON.stringify({id, state})
     });
     const data = await response.json();
     setData(data.result)
+    if(data.result?.submitGfForm.errors == null) {
+      response.ok ? Router.push('/thank-you') : null
+    }
 
-    response.ok ? Router.push('/thank-you') : null
   }
 
 

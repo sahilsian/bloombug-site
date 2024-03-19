@@ -2,6 +2,7 @@ import { gql } from "@apollo/client";
 
 import { SelectField as SelectFieldType, FieldError } from "../../generated/graphql";
 import useGravityForm, { ACTION_TYPES, FieldValue, StringFieldValue } from "../../hooks/useGravityForm";
+import { useEffect } from "react";
 
 export const SELECT_FIELD_FIELDS = gql`
   fragment SelectFieldFields on SelectField {
@@ -26,21 +27,33 @@ interface Props {
 export default function SelectField({ field, fieldErrors }: Props) {
   
   const { id, type, label, description, cssClass, isRequired, defaultValue, choices } = field;
-  console.log(defaultValue);
   const htmlId = `field_${id}`;
   const { state, dispatch } = useGravityForm();
   const fieldValue = state.find((fieldValue: FieldValue) => fieldValue.id === id) as StringFieldValue | undefined;
-  const value = fieldValue?.value || String(defaultValue);
+  let value: string;
+  if(fieldValue?.value == null) {
+    value = String(defaultValue);
+  } else {
+    value = fieldValue?.value
+  }
+
+  useEffect(()=> {
+    dispatch({
+      type: ACTION_TYPES.updateSelectFieldValue,
+      fieldValue: {
+        id,
+        value: value,
+      },})
+  }, [value])
 
   return (
     <div className={`select gfield gfield-${type} ${cssClass}`.trim()}>
-      <label className="text-left text-white label text-sm" htmlFor={htmlId}>{`${label} ${Boolean(isRequired) ? " *" : " (Optional)"}`}</label>
+      <label className="text-left text-white label text-sm" htmlFor={htmlId}>{`${label} ${Boolean(isRequired) ? " *" : ""}`}</label>
       <select
         name={String(id)}
         id={htmlId}
         required={Boolean(isRequired)}
         value={value}
-        defaultValue={defaultValue}
         className="w-full text-sm bg-white rounded-lg px-5 py-3 border-b-2"
         onChange={event => {
           dispatch({
