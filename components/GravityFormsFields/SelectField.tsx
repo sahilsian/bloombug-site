@@ -24,7 +24,9 @@ interface Props {
 }
 
 export default function SelectField({ field, fieldErrors }: Props) {
+  
   const { id, type, label, description, cssClass, isRequired, defaultValue, choices } = field;
+  console.log(defaultValue);
   const htmlId = `field_${id}`;
   const { state, dispatch } = useGravityForm();
   const fieldValue = state.find((fieldValue: FieldValue) => fieldValue.id === id) as StringFieldValue | undefined;
@@ -32,13 +34,13 @@ export default function SelectField({ field, fieldErrors }: Props) {
 
   return (
     <div className={`select gfield gfield-${type} ${cssClass}`.trim()}>
-      <label className="text-left text-white label text-sm" htmlFor={htmlId}>{`${label} ${isRequired ? " *" : " (Optional)"}`}</label>
+      <label className="text-left text-white label text-sm" htmlFor={htmlId}>{`${label} ${Boolean(isRequired) ? " *" : " (Optional)"}`}</label>
       <select
         name={String(id)}
         id={htmlId}
         required={Boolean(isRequired)}
         value={value}
-        defaultValue={'none'}
+        defaultValue={defaultValue}
         className="w-full text-sm bg-white rounded-lg px-5 py-3 border-b-2"
         onChange={event => {
           dispatch({
