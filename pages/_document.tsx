@@ -10,11 +10,11 @@ export default function Document({ children }) {
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
       </Head>
       <body id={'root'}>
-        <GoogleAnalytics gaId="G-CHR0TKY6LB" />
         <Main />
         <NextScript />
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
+      <GoogleAnalytics gaId="G-CHR0TKY6LB" />
     </Html>
   )
 }
