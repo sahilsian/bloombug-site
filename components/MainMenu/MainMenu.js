@@ -37,7 +37,9 @@ export const MainMenu = ({ items, callToActionLabel, callToActionDestination, so
             <div className={`max-w-[1350px] mx-auto flex items-center`}>
                 <div className="flex flex-[2] itemsContainer gap-2 items-center">
                     <div className="flex justify-between">
-                        <Image src={"/logo.png"} width={170} height={0}></Image>
+                        <Image onClick={()=> {
+                            router.push('/');
+                        }} src={"/logo.png"} className="cursor-pointer" width={170} height={0}></Image>
                         <div className="iconContainer justify-center items-center">
                             {activeMenu ?
                                 <FontAwesomeIcon onClick={() => setActiveMenu(!activeMenu)} size="16px" width={24} height={24} color="#FFFFFF" icon={faClose}></FontAwesomeIcon>
