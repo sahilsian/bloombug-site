@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { Analytics } from '@vercel/analytics/react';
 import { ParallaxProvider } from 'react-scroll-parallax';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const Page = (props) => {
     const router = useRouter()
@@ -20,7 +21,7 @@ export const Page = (props) => {
                 <meta property="og:description" content={props.seo.metaDesc}
                 ></meta>
                 <meta property="og:image" content={props.seo.opengraphImage.uri || ""}></meta>
-
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <meta name="twitter:card" content="summary_large_image"></meta>
                 <meta property="twitter:domain" content="bloombug.ca"></meta>
                 <meta property="twitter:url" content={`${router.asPath}`}></meta>
@@ -28,6 +29,8 @@ export const Page = (props) => {
                 <meta name="twitter:description" content={props.seo.metaDesc}></meta>
                 <meta name="twitter:image" content={props.seo.opengraphImage.uri || ""}></meta>
             </Head>
+            <GoogleAnalytics gaId="G-8QSWSWGY9W" />
+
             <MainMenu items={props.mainMenuItems} callToActionLabel={props.callToActionLabel} social={props.social} callToActionDestination={props.callToActionDestination}></MainMenu>
             <Analytics></Analytics>
             <ParallaxProvider>

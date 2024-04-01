@@ -6,6 +6,7 @@ import useGravityForm from "../hooks/useGravityForm"
 import GravityFormsField from "./GravityFormsField";
 import { useEffect, useState } from "react";
 import Router from "next/router";
+import { sendGTMEvent } from '@next/third-parties/google'
 
 const SUBMIT_FORM = gql`
   mutation submitForm($formId: Int!, $fieldValues: [FieldValuesInput]) {
@@ -58,6 +59,7 @@ export default function GravityFormsForm({ form, id }: Props) {
   }
 
   if (wasSuccessfullySubmitted) {
+    sendGTMEvent({ event: 'buttonClicked'})
     return <p>{defaultConfirmation?.message || 'Form successfully submitted - thank you.'}</p>
   }
 

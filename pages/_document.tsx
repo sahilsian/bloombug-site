@@ -14,7 +14,6 @@ export default function Document({ children }) {
         <NextScript />
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
-      <GoogleAnalytics gaId="G-CHR0TKY6LB" />
     </Html>
   )
 }
