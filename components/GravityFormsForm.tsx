@@ -41,6 +41,7 @@ export default function GravityFormsForm({ form, id }: Props) {
     const data = await response.json();
     setData(data.result)
     if(data.result?.submitGfForm.errors == null) {
+      sendGTMEvent({ event: 'formSubmission', value: id });
       response.ok ? Router.push('/thank-you') : null
     }
 
